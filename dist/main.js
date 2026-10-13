@@ -404,7 +404,7 @@ const jsxs = jsxRuntimeExports.jsxs;
 function EmotivPreview() {
   const {
     t
-  } = useTranslation("interaction-lab-emotiv_playback");
+  } = useTranslation("interaction-lab-emotiv-playback");
   return /* @__PURE__ */ jsxs("div", {
     style: {
       display: "flex",

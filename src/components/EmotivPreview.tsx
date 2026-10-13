@@ -1,7 +1,7 @@
 import { useTranslation } from "mo-sdk";
 
 export function EmotivPreview() {
-    const { t } = useTranslation("interaction-lab-emotiv_playback");
+    const { t } = useTranslation("interaction-lab-emotiv-playback");
 
     return (
         <div
