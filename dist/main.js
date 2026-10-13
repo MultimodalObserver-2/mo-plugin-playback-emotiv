@@ -146,8 +146,12 @@ function EmotivView({
   const cursorAbsPos = charts ? (playerAbsTime - charts.start) / charts.duration * 100 : 0;
   const viewPortWidth = 100 / zoom;
   let viewBoxX = cursorAbsPos - viewPortWidth / 2;
-  if (viewBoxX < 0) viewBoxX = 0;
-  if (viewBoxX + viewPortWidth > 100) viewBoxX = 100 - viewPortWidth;
+  if (viewBoxX < 0) {
+    viewBoxX = 0;
+  }
+  if (viewBoxX + viewPortWidth > 100) {
+    viewBoxX = 100 - viewPortWidth;
+  }
   const viewBoxString = `${viewBoxX} 0 ${viewPortWidth} ${GRAPH_HEIGHT}`;
   let cursorScreenPercent = (cursorAbsPos - viewBoxX) / viewPortWidth * 100;
   cursorScreenPercent = Math.min(100, Math.max(0, cursorScreenPercent));
@@ -348,7 +352,6 @@ function ChartContainer({
       borderRadius: "4px",
       overflow: "hidden",
       position: "relative"
-      // Necesario para el cursor absoluto
     },
     children
   });
@@ -401,7 +404,7 @@ const jsxs = jsxRuntimeExports.jsxs;
 function EmotivPreview() {
   const {
     t
-  } = useTranslation("interaction-lab-emotiv-capture");
+  } = useTranslation("interaction-lab-emotiv_playback");
   return /* @__PURE__ */ jsxs("div", {
     style: {
       display: "flex",
@@ -448,7 +451,6 @@ class EmotivPlayback extends PlaybackPlugin {
     return ["json"];
   }
   validateCaptureDescriptor(descriptor) {
-    console.log("🔍 Emotiv Validation - Descriptor recibido:", descriptor);
     if (!descriptor) return true;
     if (descriptor.type === "array" || descriptor.type === "object") {
       return true;

@@ -1,7 +1,7 @@
 {
-    "id": "emotiv-playback",
+    "id": "emotiv_playback",
     "name": "Emotiv Playback",
-    "description": "A",
+    "description": "Visualizes Emotiv Insight EEG recordings synchronized with the session timeline.",
     "version": "1.0.0",
     "publisher": {
         "id": "interaction-lab",
